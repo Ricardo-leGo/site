@@ -2,6 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+
+
+## packages
+yarn add  @emotion/react @emotion/styled bcrypt crypto-js  dotenv  mongoose sequelize  
+
+yarn add -D @types/bcrypt @types/crypto-js @types/sequelize @types/jsonwebtoken
+
 First, run the development server:
 
 ```bash
