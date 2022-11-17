@@ -6,8 +6,18 @@ type User {
   id: ID
 }
 
+
+
+type GenericResult{
+  msg:String
+  status:Boolean
+  Result: [ String ]
+
+}
+
 type Query {
   getUser: User
+  insertIntoDatabase:GenericResult
 }
 `;
 

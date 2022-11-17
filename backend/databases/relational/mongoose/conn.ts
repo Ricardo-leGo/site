@@ -1,14 +1,14 @@
-import mongoose, { Connection } from 'mongoose'
+import mongoose, { connect, Connection, createConnection } from 'mongoose'
+import Options from '../models';
 
 const uri: String = process.env.DB_PATH ?? "mongodb://localhost:27017";
-console.log( uri );
 let conn: mongoose.Connection ;
 
 export const getConnection = async (): Promise<mongoose.Connection> => {
-  
+
     if (conn == null) {
 
-    conn = mongoose.createConnection(
+    conn =  createConnection(
         uri as string,
         () => ({
                 
@@ -22,10 +22,10 @@ export const getConnection = async (): Promise<mongoose.Connection> => {
         
     ) as unknown as Connection ;
 
-    console.log(`<====================== DB ${conn.name} ======================>`);
 
-
+// console.log( conn );
+    console.log(`<====================== ${ conn.name } ======================>`);
   }
 
-  return conn 
+  return  conn ;
 }
